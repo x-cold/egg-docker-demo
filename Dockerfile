@@ -10,9 +10,8 @@ RUN \
 
 WORKDIR /usr/src/app
 
+# 借助 docker 的分级文件系统，如果 package.json 未发生变化，无需重复安装依赖
 COPY package.json /usr/src/app/
-
-# RUN npm i
 
 RUN npm i --registry=https://registry.npm.taobao.org
 
@@ -23,4 +22,4 @@ VOLUME /root/logs
 
 EXPOSE 7001
 
-CMD npm run start
+CMD npm start
