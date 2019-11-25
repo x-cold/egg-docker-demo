@@ -31,3 +31,28 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
+
+### Docker 部署
+
+```bash
+# 构建 docker 镜像
+docker build -t egg-demo2 .
+
+# 运行容器
+docker run -d -p 7001:7001 egg-demo2
+
+# 运行容器并使用 /bin/bash 进行调试
+docker run -it egg-demo2 /bin/sh
+
+# 查看所有容器
+docker ps -a
+
+# 查看容器详细信息
+docker inspect egg-demo2
+
+# 停止容器
+docker stop [id]
+
+# 移除容器
+docker rm [id]
+```
